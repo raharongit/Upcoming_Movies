@@ -1,0 +1,72 @@
+{%extends "index.html"%}
+{% block element %}
+
+
+<div class="container-fluid">
+  <div class="row">
+     <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+              <li>Genres</li>
+              {% for genre in genres %}
+              <li>{{genre}}</li>
+              {{% endfor %}}
+          </ul>
+     </div>
+  </div>
+
+    <div>
+        <b>Details of all upcoming movies in one place.</b>
+         <h2 class="sub-header">{{current_genre}}</h2>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead></thead>
+              <tbody>
+              {% for i in range (0,30) %}
+                <tr>
+                    {% if elements[i] is none %}
+                    {% else %}
+                   <td>{{i+1}}.</td>
+                  <td>
+                      <img src={{poster_links[i]}}>
+                  </td>
+                  <td>
+                      <b>{{elements[i]}}</b><br>
+                      <p>Release Date:- {{release_dates[i]}}</p>
+                  </td>
+                  <td>
+                      <b>Trailer:-</b>
+                      <b><a href={{youtube_link[i]}}+{{elements[i].replace(" ", "+").replace("&", "and")}} target="_blank">Search on Youtube</b></p>
+                  </td>
+                  <td>
+                      <a href={{google_link}}+{{elements[i].replace(" ", "+").replace("&", "and")}} target="_blank">Search on Google</a>
+                  </td>
+                    {% endif %}
+                </tr>
+              {% endfor %}
+              </tbody>
+            </table>
+          </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
