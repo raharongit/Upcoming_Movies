@@ -9,7 +9,7 @@
               <li><a href="#">Genres</a></li>
               {% for genre in genres %}
               {% if genre==current_genre %}
-                    <li class="active"><a href="/{{genre}}"><b>{{genre}} -></b><span class="sr-only">(current)</span></a></li>
+                    <li class="active"><a href="/{{genre}}"><b>{{genre}}--></b><span class="sr-only">(current)</span></a></li>
                 {% else %}
                     <li ><a href="/{{genre}}">{{genre}} </a></li>
                 {% endif %}
@@ -35,7 +35,7 @@
                     {% else %}
                    <td>{{ i+1 }}.</td>
                   <td>
-                      <img src="{{poster_links[i]}}">
+                      <img id="imagewidth" src="{{poster_links[i]}}">
                   </td>
                   <td>
                       <b>{{ elements[i] }}</b><br>
