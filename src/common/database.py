@@ -4,7 +4,8 @@ import pymongo
 
 class Database(object):
 
-    URI= "mongodb://akshay_rahar:mlabdb2016@ds013926.mlab.com:13926/upcomingmovies"
+    URI= "mongodb://127.0.0.1:27017"
+    #"mongodb://akshay_rahar:mlabdb2016@ds013926.mlab.com:13926/upcomingmovies"
 
     DATABASE = None
 
